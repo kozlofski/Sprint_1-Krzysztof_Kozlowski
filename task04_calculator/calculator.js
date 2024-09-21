@@ -75,7 +75,7 @@ function addLIstenersToOperationButtons() {
 }
 
 function showResult() {
-    if(currentOperation !== "init") {
+    if(currentOperation !== "init" && currentOperand > 0) {
         updateResult()
         resetCurrentOperand()
         updateCurrentOperation("init")
