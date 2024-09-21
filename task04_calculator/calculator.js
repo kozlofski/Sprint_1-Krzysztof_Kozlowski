@@ -19,32 +19,33 @@ function init() {
 function updateResult() {
     switch(currentOperation) {
         case "init": 
-        currentResult = Number.parseInt(currentOperand); break;
+        currentResult = Number.parseFloat(currentOperand); break;
         case "+":
-        currentResult += Number.parseInt(currentOperand); break;
+        currentResult += Number.parseFloat(currentOperand); break;
         case "-":
-            currentResult -= Number.parseInt(currentOperand); break;
+            currentResult -= Number.parseFloat(currentOperand); break;
         case "*":
-            currentResult *= Number.parseInt(currentOperand); break;
+            currentResult *= Number.parseFloat(currentOperand); break;
         case "/":
-            currentResult /= Number.parseInt(currentOperand); break;
+            currentResult /= Number.parseFloat(currentOperand); break;
     }
 }
 
 function buildNumber(event) {
     const newDigit = event.srcElement.innerHTML
     currentOperand += newDigit
-    console.log(`Building number - current operand: ${currentOperand}`)
     renderResultWindow(currentOperand)
 }
 
 function addListenersToDigits() {
     const digitButtons = calculator.querySelectorAll(".digit")
+    const commaButton = calculator.querySelector(".comma")
 
     digitButtons.forEach((button)=>{
         const buttonValue = button.innerHTML
         button.addEventListener('click', buildNumber)
     })
+    commaButton.addEventListener('click', buildNumber)
 }
 
 function resetCurrentOperand() {

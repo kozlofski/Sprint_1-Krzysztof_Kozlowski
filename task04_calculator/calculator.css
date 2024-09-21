@@ -8,16 +8,24 @@
     --light-pink: #fad9f3;
 }
 
+.h1 {
+    text-align: center;
+}
+
 .calculator {
     color: var(--dark-pink);
     font-size: 2rem;
     width: 50%;
+    border: 2px solid var(--dark-pink);
+    border-radius: 10px;
+    padding: 1em;
 }
 
 .digits-panel {
     width: 75%;
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr) 1.5fr;
+    grid-template-rows: repeat(4, 1fr);
     gap: 0.1em
 }
 
@@ -34,4 +42,5 @@
     border: 2px solid var(--dark-pink);
     border-radius: 8px;
     padding: 0 0.2em;
+    text-align: right;
 }
