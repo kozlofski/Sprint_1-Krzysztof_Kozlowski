@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', init)
 const calculator = document.querySelector(".calculator")
+const resultWindow = calculator.querySelector(".result-window")
 
 let currentResult = 0
 let currentOperand = ""
-let currentOperation = "+"
+let currentOperation = "init"
 
 function init() {
     console.log("DOM loaded")
@@ -15,7 +16,9 @@ function init() {
 
 function updateResult() {
     switch(currentOperation) {
-        case "+": 
+        case "init": 
+        currentResult = Number.parseInt(currentOperand); break;
+        case "+":
         currentResult += Number.parseInt(currentOperand); break;
         case "-":
             currentResult -= Number.parseInt(currentOperand); break;
@@ -30,6 +33,7 @@ function buildNumber(event) {
     const newDigit = event.srcElement.innerHTML
     currentOperand += newDigit
     console.log(`Building number - current operand: ${currentOperand}`)
+    renderResultWindow(currentOperand)
 }
 
 function addListenersToDigits() {
@@ -54,8 +58,8 @@ function operationClicked(event) {
     if(currentOperand.length > 0) {
         updateResult()
         resetCurrentOperand()
+        renderResultWindow(currentResult)
     }
-    console.log(`Current result: ${currentResult}`)
     updateCurrentOperation(nextOperation)
 }
 
@@ -68,11 +72,12 @@ function addLIstenersToOperationButtons() {
 }
 
 function showResult() {
-    updateResult()
-    resetCurrentOperand()
-    updateCurrentOperation("+")
-    console.log(`Current result: ${currentResult}`)
-
+    if(currentOperation !== "init") {
+        updateResult()
+        resetCurrentOperand()
+        updateCurrentOperation("init")
+        renderResultWindow(currentResult)
+    }
 }
 
 function addLIstenerToResultButton() {
@@ -85,9 +90,14 @@ function resetCalculator() {
     updateCurrentOperation("+")
     currentResult = 0
     console.log("Calculator reset")
+    renderResultWindow(currentResult)
 }
 
 function addListenerToClearButton() {
     const clearButton = calculator.querySelector(".clear")
     clearButton.addEventListener('click', resetCalculator)
+}
+
+function renderResultWindow(number) {
+    resultWindow.innerHTML = number
 }
