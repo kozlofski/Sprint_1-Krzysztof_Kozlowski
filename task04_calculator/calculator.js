@@ -9,6 +9,8 @@ function init() {
     console.log("DOM loaded")
     addListenersToDigits()
     addLIstenersToOperationButtons()
+    addLIstenerToResultButton()
+    addListenerToClearButton()
 }
 
 function updateResult() {
@@ -44,9 +46,7 @@ function resetCurrentOperand() {
 }
 
 function updateCurrentOperation(newOperation) {
-    console.log(`curr op before: ${currentOperation}`)
     currentOperation = newOperation
-    console.log(`curr op after: ${currentOperation}`)
 }
 
 function operationClicked(event) {
@@ -65,4 +65,29 @@ function addLIstenersToOperationButtons() {
     operationButtons.forEach((button)=>{
         button.addEventListener('click', operationClicked)
     })
+}
+
+function showResult() {
+    updateResult()
+    resetCurrentOperand()
+    updateCurrentOperation("+")
+    console.log(`Current result: ${currentResult}`)
+
+}
+
+function addLIstenerToResultButton() {
+    const resultButton = calculator.querySelector(".result")
+    resultButton.addEventListener('click', showResult)
+}
+
+function resetCalculator() {
+    resetCurrentOperand()
+    updateCurrentOperation("+")
+    currentResult = 0
+    console.log("Calculator reset")
+}
+
+function addListenerToClearButton() {
+    const clearButton = calculator.querySelector(".clear")
+    clearButton.addEventListener('click', resetCalculator)
 }
