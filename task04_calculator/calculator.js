@@ -1,6 +1,8 @@
 document.addEventListener('DOMContentLoaded', init)
 const calculator = document.querySelector(".calculator")
 const resultWindow = calculator.querySelector(".result-window")
+const operationButtons = calculator.querySelectorAll(".operation")
+
 
 let currentResult = 0
 let currentOperand = ""
@@ -61,10 +63,11 @@ function operationClicked(event) {
         renderResultWindow(currentResult)
     }
     updateCurrentOperation(nextOperation)
+    resetHighlightingOperationButtons()
+    renderHighlightCurrentOperationButton(event.srcElement)
 }
 
 function addLIstenersToOperationButtons() {
-    const operationButtons = calculator.querySelectorAll(".operation")
     console.log(operationButtons)
     operationButtons.forEach((button)=>{
         button.addEventListener('click', operationClicked)
@@ -78,6 +81,7 @@ function showResult() {
         updateCurrentOperation("init")
         renderResultWindow(currentResult)
     }
+    resetHighlightingOperationButtons()
 }
 
 function addLIstenerToResultButton() {
@@ -91,6 +95,7 @@ function resetCalculator() {
     currentResult = 0
     console.log("Calculator reset")
     renderResultWindow(currentResult)
+    resetHighlightingOperationButtons()
 }
 
 function addListenerToClearButton() {
@@ -100,4 +105,14 @@ function addListenerToClearButton() {
 
 function renderResultWindow(number) {
     resultWindow.innerHTML = number
+}
+
+function renderHighlightCurrentOperationButton(clickedButton) {
+    clickedButton.style.backgroundColor = '#fa76dd';
+}
+
+function resetHighlightingOperationButtons() {
+    operationButtons.forEach((button)=>{
+        button.style.backgroundColor = '#fad9f3';
+    })
 }
