@@ -18,7 +18,7 @@ Zadanie 5 znajduje się w folderze 'task_05'
 
 ## Zadanie 6
 
-Pod [tym linkiem](https://scratch.mit.edu/projects/1074183822/) jest mój program w Scratchu. Nie jest wolny od bugów (wybuchanie statków czasem dziwnie się zachowuje), ale jeszcze nie wiem jak selektywnie zatrzymać wykonywanie niektórych skryptów. Strzelanie (za pomocą spacji lub klawisza B) działa ładnie. Scratch raczej nie pozwala na wygodne obsługiwanie ciągłego ruchu Sprite'a strzałkami.
+Mój program w Scratchu znajduje się w folderze task_06. Ponadto znajduje się pod [tym linkiem](https://scratch.mit.edu/projects/1074183822/). Nie jest wolny od bugów (wybuchanie statków czasem dziwnie się zachowuje), ale jeszcze nie wiem jak selektywnie zatrzymać wykonywanie niektórych skryptów. Strzelanie (za pomocą spacji lub klawisza B) działa ładnie. Scratch raczej nie pozwala na wygodne obsługiwanie ciągłego ruchu Sprite'a strzałkami.
 
 Pozdrawiam!
 
