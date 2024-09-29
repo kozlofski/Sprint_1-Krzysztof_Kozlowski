@@ -44,3 +44,12 @@
     padding: 0 0.2em;
     text-align: right;
 }
+
+.division {
+    order: 9;
+}
+
+.result {
+    order: 10;
+    grid-column: 1 / span 4;
+}
