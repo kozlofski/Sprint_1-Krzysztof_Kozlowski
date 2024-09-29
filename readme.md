@@ -14,7 +14,7 @@ Następnie zgodnie z posiadaną wiedzą spróbowałem zaprogramować kalkulator 
 
 ## Zadanie 6
 
-[Program w Scratchu](https://scratch.mit.edu/projects/1074183822/)
+Pod [tym linkiem](https://scratch.mit.edu/projects/1074183822/) jest mój program w Scratchu. Nie jest wolny od bugów (wybuchanie statków czasem dziwnie się zachowuje), ale jeszcze nie wiem jak selektywnie zatrzymać wykonywanie niektórych skryptów. Strzelanie (za pomocą spacji lub klawisza B) działa ładnie. Scratch raczej nie pozwala na wygodne obsługiwanie ciągłego ruchu Sprite'a strzałkami.
 
 Pozdrawiam!
 Krzysztof Kozłowski
