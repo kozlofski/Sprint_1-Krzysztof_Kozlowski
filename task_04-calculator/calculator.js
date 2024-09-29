@@ -8,7 +8,6 @@ let currentOperand = ""
 let currentOperation = "init"
 
 function init() {
-    console.log("DOM loaded")
     addListenersToDigits()
     addLIstenersToOperationButtons()
     addLIstenerToResultButton()
@@ -68,7 +67,6 @@ function operationClicked(event) {
 }
 
 function addLIstenersToOperationButtons() {
-    console.log(operationButtons)
     operationButtons.forEach((button)=>{
         button.addEventListener('click', operationClicked)
     })
